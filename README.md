@@ -97,7 +97,6 @@ impl StandardFood
 }//new_food.secret_str //But the variable is completely inaccessible, 
 
 ```
-
 * Note I'll need to learn more about the rust compiler before truely understanding the application of this forced limitaiton.
 
 Additionally its possible to extend the accessibility of a sub-module from a module with access to it.
@@ -109,4 +108,39 @@ mod foods;
 pub use foods::vegetables::potato as MyPotato;
   // in main.rs
 chapter_7::MyPotato::i_am_potato();
+```
+
+### Chapter_8 Collections
+
+```Rust
+//part of std-core
+
+
+pub fn foo(){
+  let mut my_vec: Vec<i32> = vec![1,2,3,4];
+  my_vec.pop();
+  my_vec.pop();
+  my_vec.pop();
+  dbg!(my_vec);
+  my_vec.push(2);
+  my_vec.push(3);
+  my_vec.push(4);
+  dbg!(my_vec);
+
+  //element wise accessing
+
+  let third = &my_vec[2]; // danger zone
+
+  let third: Option<&i32> = v.get(2);
+
+  match third {
+    None => {
+      println("Out of bounds, third index empty");
+    },
+    Some (third) => 
+    {
+      println!("Third index value: {}", third); //i32
+    }
+  }
+}
 ```
