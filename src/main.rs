@@ -5,6 +5,7 @@ use crate::chapter_5_6::{ExampleUser, Rectangle};
 
 mod chapter_5_6;
 mod chapter_7;
+mod chapter_8;
 fn main() {
     // println!("Welcome to the rust source directory");
     // let user = ExampleUser::build_user("example_email".to_owned(), "exmaple_username".to_owned());
@@ -26,7 +27,7 @@ fn main() {
     // chapter_7::MyPotato::i_am_potato();
     // let new_food = chapter_7::StandardFood::new(32, "I am secret".to_owned());
 
-
+    chapter_8::this_is_chap_8();
 
     // new_food.quanitiy;
     //new_food.secret_str
