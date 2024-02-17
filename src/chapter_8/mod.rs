@@ -1,6 +1,9 @@
 
 //use std::collections::;
-
+fn foo(my_int:i32)
+{
+  //todo();!
+}
 
 pub fn this_is_chap_8()
 {
@@ -28,17 +31,37 @@ pub fn this_is_chap_8()
   }
 
   
-  if let Some(third) = my_vec.get(2)
-  {
-    let command = "if let Some(third) = my_vec.get(2)";
+  // if let Some(third) = my_vec.get(2)
+  // {
+  //   let command = "if let Some(third) = my_vec.get(2)";
     
-    println!("The condition {:?} is only true if .get() returns a valid i32", command)
+  //   println!("The condition {:?} is only true if .get() returns a valid i32", command)
 
-  }
-  else {
-    let command: &str = "if let Some(third) = my_vec.get(2)";
-    println!("The condition {:?} is only true if .get() returns None", command)
-  }
+  // }
+  // else {
+  //   let command: &str = "if let Some(third) = my_vec.get(2)";
+  //   println!("The condition {:?} is only true if .get() returns None", command)
+  // }
 
   // better way of writing this
+  // Considering theres a lot of repetition, wouldn't this implementation make more sense
+
+  
+  
+  let mut out_message = String::new();
+  
+  if let Some(third) = my_vec.get(2)
+  {
+    let msg_success_target: &str = "a valid i32";
+    out_message += &msg_success_target;
+    foo(*third);
+  }
+  else {
+    let msg_fail_target:&str = "None";
+    out_message += msg_fail_target;
+  }
+  let msg_prefix: &str = "The condition {:?} is only true if .get() returns";
+
+  out_message = format!("{} {}",msg_prefix, out_message);
+  println!("{out_message}");
 }
